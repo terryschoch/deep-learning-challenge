@@ -19,10 +19,10 @@ organization; they include:
     - **STATUS**: Active status
     - **INCOME_AMT**: Income classification
     - **SPECIAL_CONSIDERATIONS**: Special considerations for application
-    - **ASK_AMT**: Funding amount requested<br><br>
+    - **ASK_AMT**: Funding amount requested<br><
 
 - **The Target**
-    - **IS_SUCCESSFUL**: Was the money used effectively<br><br>
+    - **IS_SUCCESSFUL**: Was the money used effectively<br>
 
 - **The Extras**:
     - **EIN** and **NAME**: Identification columns<br><br><br>
@@ -48,7 +48,7 @@ After loading and conducting an initial review of the ***charity_data.csv***, id
 
 
 - #### *What variable(s) should be removed from the input data because they are neither targets nor features?*
-    - **EIN** and **NAME**
+    - **EIN** and **NAME**<br><br>
 
 Once identified and the extraneous columns dropped, the remaining columns were further cleaned by determining the number of unique values for each through the use of the *.nunique()* function and binning outlier values for certain columns into catchall bins labelled "Other". In this case, this was achieved by way of applying *.value_counts* on the ***APPLICATION_TYPE*** and ***CLASSIFICATION*** columns and creating respective cut off values for each (<500 and <300) where the value would be replaced with the "Other" designation by way of the *.replace* function.
 
@@ -64,7 +64,11 @@ A model (***nn***) was now defined as well as its number of input features (44) 
 
 
 ## Step 3: The Optimization
-While our original model did a respectable job given the challenge, Alphabet Soup now asked us to attempt to reach a new goal of a predictive accuracy higher than 75%. To achieve this, we sought to optimize the model.
+While our original model did a respectable job given the challenge, Alphabet Soup now asked us to attempt to reach a new goal of a predictive accuracy higher than 75%. To achieve this, we sought to optimize the model and document:
+    
+1. How many neurons, layers, and activation functions did you select for your neural network model, and why?
+2. Were you able to achieve the target model performance?
+3. What steps did you take in your attempts to increase model performance?<br><br>
 
 - **Attempt 1: Optimization A:**
    - The ***nnopt_a*** again used 44 input features, but we thought trying a more robust model might yield improved results. As such, two more hidden layers were added bringing the total to 4. We also increased the number of neurons per layer to 22, 17, 33 and 11 respectively (ReLu remained the activation function throughout the hidden layers). The summary revealed 2,361 total trainable parameters with this model which would be run on an increased 50 epochs this time. The resulting evaluation indicated we'd been able to improve the accuracy to 72.9% (0.7290) and reduce the loss to 55.6% (0.5557).<br><br>
@@ -84,7 +88,7 @@ While our original model did a respectable job given the challenge, Alphabet Sou
         - L1: **8** nodes, *ReLu* act
         - L2: **5** nodes, *ReLu* act
     - Accuracy Score: **72.9%**
-    - Loss Score: **55.7%**
+    - Loss Score: **55.7%**<br>
 ![Original Model Accuracy](Images/nn_accuracy.png)
 ![Original Model Loss](Images/nn_loss.png)<br><br>
 
@@ -98,8 +102,8 @@ While our original model did a respectable job given the challenge, Alphabet Sou
         - L4: **11** nodes, *ReLu* act
     - Trainable Paramaters: **2,361**
     - Accuracy Score: **72.9%**
-    - Loss Score: **55.6%**
-![Optimized Model A Accuracy](Images/OptA_accuracy.png)
+    - Loss Score: **55.6%**<br>
+![Optimized Model A Accuracy](Images/Opta_accuracy.png)
 ![Optimized Model A Loss](Images/Opta_loss.png)<br><br>
 
 
@@ -114,7 +118,7 @@ While our original model did a respectable job given the challenge, Alphabet Sou
         - L6: **18** nodes, *ReLu* act
     - Trainable Paramaters: **3,583**
     - Accuracy Score: **73.1%**
-    - Loss Score: **57%**
+    - Loss Score: **57%**<br>
 ![Optimized Model B Accuracy](Images/optb_accuracy.png)
 ![Optimized Model B Loss](Images/optb_loss.png)<br><br>
 
@@ -129,7 +133,7 @@ While our original model did a respectable job given the challenge, Alphabet Sou
         - L5: **6** nodes, *ReLu* act
     - Trainable Paramaters: **3,457**
     - Accuracy Score: **73%**
-    - Loss Score: **58.5%**
+    - Loss Score: **58.5%**<br>
 ![Optimized Model C Accuracy](Images/optc_accuracy.png)
 ![Optimized Model C Loss](Images/optc_loss.png)<br><br><br>
     
