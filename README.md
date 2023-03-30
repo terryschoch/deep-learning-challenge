@@ -19,7 +19,7 @@ organization; they include:
     - **STATUS**: Active status
     - **INCOME_AMT**: Income classification
     - **SPECIAL_CONSIDERATIONS**: Special considerations for application
-    - **ASK_AMT**: Funding amount requested<br><
+    - **ASK_AMT**: Funding amount requested<br>
 
 - **The Target**
     - **IS_SUCCESSFUL**: Was the money used effectively<br>
@@ -64,7 +64,7 @@ A model (***nn***) was now defined as well as its number of input features (44) 
 
 
 ## Step 3: The Optimization
-While our original model did a respectable job given the challenge, Alphabet Soup now asked us to attempt to reach a new goal of a predictive accuracy higher than 75%. To achieve this, we sought to optimize the model and document:
+While our original model did a respectable job given the challenge, Alphabet Soup now asked us to attempt to reach a new goal of a predictive accuracy higher than 75%. To achieve this, we sought to optimize the model and document the following:
     
 1. How many neurons, layers, and activation functions did you select for your neural network model, and why?
 2. Were you able to achieve the target model performance?
